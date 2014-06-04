@@ -8,13 +8,13 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+class ViewController: NSViewController, NSTableViewDataSource {
+
+    @IBOutlet var tableView : NSTableView
+    @IBOutlet var hashText : NSTextField
                             
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-                                    
     }
 
     override var representedObject: AnyObject? {
@@ -22,6 +22,10 @@ class ViewController: NSViewController {
         // Update the view, if already loaded.
         }
                                     
+    }
+    
+    @IBAction func add(sender:AnyObject?) {
+        
     }
 
 

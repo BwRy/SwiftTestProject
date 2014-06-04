@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC08EC14193EA5D400327A67 /* Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC08EC13193EA5D400327A67 /* Hash.swift */; };
 		DC956638193D7AEE00893A44 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC956637193D7AEE00893A44 /* main.swift */; };
 		DC95663A193D7AEE00893A44 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC956639193D7AEE00893A44 /* ViewController.swift */; };
 		DC95663C193D7AEE00893A44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC95663B193D7AEE00893A44 /* AppDelegate.swift */; };
@@ -26,6 +27,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC08EC0C193DB63900327A67 /* SwiftTestProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftTestProject-Bridging-Header.h"; sourceTree = "<group>"; };
+		DC08EC0F193DB84600327A67 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		DC08EC13193EA5D400327A67 /* Hash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hash.swift; sourceTree = "<group>"; };
 		DC956632193D7AEE00893A44 /* SwiftTestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftTestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC956636193D7AEE00893A44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC956637193D7AEE00893A44 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -56,9 +60,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC08EC17193EB31700327A67 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DC08EC13193EA5D400327A67 /* Hash.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		DC08EC1A193EB8CC00327A67 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DC956639193D7AEE00893A44 /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		DC956629193D7AEE00893A44 = {
 			isa = PBXGroup;
 			children = (
+				DC08EC0F193DB84600327A67 /* Security.framework */,
 				DC956634193D7AEE00893A44 /* SwiftTestProject */,
 				DC956649193D7AEE00893A44 /* SwiftTestProjectTests */,
 				DC956633193D7AEE00893A44 /* Products */,
@@ -77,11 +98,13 @@
 		DC956634193D7AEE00893A44 /* SwiftTestProject */ = {
 			isa = PBXGroup;
 			children = (
-				DC956639193D7AEE00893A44 /* ViewController.swift */,
+				DC08EC1A193EB8CC00327A67 /* Controller */,
 				DC95663B193D7AEE00893A44 /* AppDelegate.swift */,
 				DC95663D193D7AEE00893A44 /* Images.xcassets */,
 				DC95663F193D7AEE00893A44 /* Main.storyboard */,
 				DC956635193D7AEE00893A44 /* Supporting Files */,
+				DC08EC0C193DB63900327A67 /* SwiftTestProject-Bridging-Header.h */,
+				DC08EC17193EB31700327A67 /* Model */,
 			);
 			path = SwiftTestProject;
 			sourceTree = "<group>";
@@ -212,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC95663C193D7AEE00893A44 /* AppDelegate.swift in Sources */,
+				DC08EC14193EA5D400327A67 /* Hash.swift in Sources */,
 				DC95663A193D7AEE00893A44 /* ViewController.swift in Sources */,
 				DC956638193D7AEE00893A44 /* main.swift in Sources */,
 			);
@@ -328,10 +352,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = SwiftTestProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/system",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftTestProject/SwiftTestProject-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -339,10 +370,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = SwiftTestProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/system",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftTestProject/SwiftTestProject-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -403,6 +440,7 @@
 				DC956652193D7AEE00893A44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DC956653193D7AEE00893A44 /* Build configuration list for PBXNativeTarget "SwiftTestProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -411,6 +449,7 @@
 				DC956655193D7AEE00893A44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
