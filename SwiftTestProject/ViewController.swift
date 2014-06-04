@@ -9,10 +9,6 @@
 import Cocoa
 
 class ViewController: NSViewController, NSTableViewDataSource {
-    
-    let valueIdentifier = "value"
-    let hashIdentifier = "hash"
-
     @IBOutlet var tableView : NSTableView
     @IBOutlet var hashText : NSTextField
     
@@ -46,10 +42,7 @@ class ViewController: NSViewController, NSTableViewDataSource {
     }
     
     func tableView(tableView: NSTableView!, objectValueForTableColumn tableColumn: NSTableColumn!, row: Int) -> AnyObject! {
-        if tableColumn.identifier == valueIdentifier {
-            return tableData[row].value
-        }
-        return ""
+        return tableData[row].valueForKey(tableColumn.identifier)
     }
 }
 
