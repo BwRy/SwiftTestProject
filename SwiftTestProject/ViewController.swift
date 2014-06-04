@@ -9,9 +9,14 @@
 import Cocoa
 
 class ViewController: NSViewController, NSTableViewDataSource {
+    
+    let valueIdentifier = "value"
+    let hashIdentifier = "hash"
 
     @IBOutlet var tableView : NSTableView
     @IBOutlet var hashText : NSTextField
+    
+    var tableData = ["test".hash()]
                             
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +30,26 @@ class ViewController: NSViewController, NSTableViewDataSource {
     }
     
     @IBAction func add(sender:AnyObject?) {
-        
+        if !hashText.stringValue.isEmpty {
+            tableData.append(hashText.stringValue.hash())
+        } else {
+            var alert = NSAlert()
+            alert.alertStyle = NSAlertStyle.InformationalAlertStyle
+            alert.messageText = "No Input Data"
+            alert.informativeText = "Enter a value to be hashed"
+            alert.runModal()
+        }
     }
-
-
+    
+    func numberOfRowsInTableView(tableView: NSTableView!) -> Int {
+        return tableData.count
+    }
+    
+    func tableView(tableView: NSTableView!, objectValueForTableColumn tableColumn: NSTableColumn!, row: Int) -> AnyObject! {
+        if tableColumn.identifier == valueIdentifier {
+            return tableData[row].value
+        }
+        return ""
+    }
 }
 
