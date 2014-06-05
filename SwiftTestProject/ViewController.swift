@@ -12,7 +12,7 @@ class ViewController: NSViewController, NSTableViewDataSource {
     @IBOutlet var tableView : NSTableView
     @IBOutlet var hashText : NSTextField
     
-    var tableData = ["test".hash()]
+    var tableData = ["asfasdfasdf".hash()]
                             
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +28,7 @@ class ViewController: NSViewController, NSTableViewDataSource {
     @IBAction func add(sender:AnyObject?) {
         if !hashText.stringValue.isEmpty {
             tableData.append(hashText.stringValue.hash())
+            tableView.reloadData()
         } else {
             var alert = NSAlert()
             alert.alertStyle = NSAlertStyle.InformationalAlertStyle
@@ -42,6 +43,11 @@ class ViewController: NSViewController, NSTableViewDataSource {
     }
     
     func tableView(tableView: NSTableView!, objectValueForTableColumn tableColumn: NSTableColumn!, row: Int) -> AnyObject! {
+        if tableColumn.identifier == "stringToHash"{
+                return tableData[row].stringToHash
+        } else {
+                return tableData[row].hashedString
+        }
         return tableData[row].valueForKey(tableColumn.identifier)
     }
 }

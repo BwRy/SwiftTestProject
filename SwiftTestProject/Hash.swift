@@ -15,23 +15,25 @@ extension String {
 }
 
 class Hash: NSObject {
-    var value: String? = nil
+    let stringToHash: String
     
-    var sha1: CUnsignedChar[]? {
+    var hashedString: String {
     get {
-        if value == nil {
-            return nil
-        }
-        
         var resultHash = CUnsignedChar[](count: Int(CC_SHA1_DIGEST_LENGTH), repeatedValue: 0)
         var resultHashPointer: CMutablePointer<CUnsignedChar> = &resultHash
         
-        CC_SHA1(&value, UInt32(sizeof(Int)), resultHashPointer)
-        return resultHash
+        var data = stringToHash.dataUsingEncoding(NSUTF8StringEncoding)
+        CC_SHA1(data.bytes, UInt32(data.length), resultHashPointer)
+        
+        var returnString = NSMutableString(capacity: resultHash.count * 2)
+        for byte in resultHash {
+            returnString.appendFormat("%02X", byte)
+        }
+        return returnString
     }
     }
     
     init(value: String) {
-        self.value = value
+        self.stringToHash = value
     }
 }
