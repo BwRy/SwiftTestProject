@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="14A238x" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
+        <deployment defaultVersion="101000" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6154.17"/>
     </dependencies>
     <scenes>
@@ -31,11 +32,11 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="SwiftTestProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="541" height="245"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button appearanceType="aqua" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vCi-TY-uKm">
-                                <rect key="frame" x="318" y="10" width="107" height="25"/>
+                            <button appearanceType="aqua" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vCi-TY-uKm">
+                                <rect key="frame" x="409" y="10" width="107" height="25"/>
                                 <buttonCell key="cell" type="roundTextured" title="Generate Hash" bezelStyle="texturedRounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Yev-0C-hyf">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -44,17 +45,20 @@
                                     <action selector="add:" target="XfG-lQ-9wD" id="sDz-nV-Fut"/>
                                 </connections>
                             </button>
-                            <textField appearanceType="aqua" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yyW-ir-N3c">
-                                <rect key="frame" x="20" y="12" width="285" height="22"/>
+                            <textField appearanceType="aqua" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yyW-ir-N3c">
+                                <rect key="frame" x="20" y="12" width="376" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="285" id="76u-be-fhq"/>
+                                </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="JJ1-iS-MTK">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <scrollView appearanceType="aqua" fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVi-aU-33g">
-                                <rect key="frame" x="20" y="42" width="410" height="238"/>
-                                <clipView key="contentView" ambiguous="YES" misplaced="YES" id="Od9-Wf-VVH">
+                            <scrollView appearanceType="aqua" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVi-aU-33g">
+                                <rect key="frame" x="20" y="42" width="501" height="183"/>
+                                <clipView key="contentView" id="Od9-Wf-VVH">
                                     <rect key="frame" x="1" y="17" width="238" height="117"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
@@ -78,7 +82,7 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                 </tableColumn>
-                                                <tableColumn identifier="hashedString" width="286" minWidth="40" maxWidth="1000" id="54x-X3-373">
+                                                <tableColumn identifier="hashedString" width="377" minWidth="40" maxWidth="1000" id="54x-X3-373">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Hash">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -113,6 +117,17 @@
                                 </tableHeaderView>
                             </scrollView>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="vCi-TY-uKm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yyW-ir-N3c" secondAttribute="trailing" constant="13" id="5Mo-dw-QUn"/>
+                            <constraint firstItem="yyW-ir-N3c" firstAttribute="top" secondItem="yVi-aU-33g" secondAttribute="bottom" constant="8" symbolic="YES" id="EEW-hs-hTR"/>
+                            <constraint firstItem="vCi-TY-uKm" firstAttribute="top" secondItem="yVi-aU-33g" secondAttribute="bottom" constant="8" symbolic="YES" id="NYA-8O-b2f"/>
+                            <constraint firstAttribute="trailing" secondItem="yVi-aU-33g" secondAttribute="trailing" constant="20" symbolic="YES" id="Urr-8D-GIW"/>
+                            <constraint firstItem="yVi-aU-33g" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="Vck-57-P41"/>
+                            <constraint firstItem="yVi-aU-33g" firstAttribute="leading" secondItem="yyW-ir-N3c" secondAttribute="leading" id="bDS-rh-vzl"/>
+                            <constraint firstAttribute="trailing" secondItem="vCi-TY-uKm" secondAttribute="trailing" constant="25" id="fy4-bA-ggo"/>
+                            <constraint firstAttribute="bottom" secondItem="yVi-aU-33g" secondAttribute="bottom" constant="42" id="iKb-kg-isC"/>
+                            <constraint firstItem="yVi-aU-33g" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="qvt-ye-9Lf"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="hashText" destination="yyW-ir-N3c" id="jnL-pg-MwL"/>
@@ -121,7 +136,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="692"/>
+            <point key="canvasLocation" x="45.5" y="664.5"/>
         </scene>
         <!--Application-->
         <scene sceneID="JPo-4y-FX3">
