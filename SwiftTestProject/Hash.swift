@@ -22,7 +22,7 @@ class Hash: NSObject {
         var resultHash = CUnsignedChar[](count: Int(CC_SHA1_DIGEST_LENGTH), repeatedValue: 0)
         var resultHashPointer: CMutablePointer<CUnsignedChar> = &resultHash
         
-        var data = stringToHash.dataUsingEncoding(NSUTF8StringEncoding)
+        let data = stringToHash.dataUsingEncoding(NSUTF8StringEncoding)
         CC_SHA1(data.bytes, UInt32(data.length), resultHashPointer)
         
         var returnString = NSMutableString(capacity: resultHash.count * 2)

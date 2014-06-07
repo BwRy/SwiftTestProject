@@ -43,11 +43,6 @@ class ViewController: NSViewController, NSTableViewDataSource {
     }
     
     func tableView(tableView: NSTableView!, objectValueForTableColumn tableColumn: NSTableColumn!, row: Int) -> AnyObject! {
-        if tableColumn.identifier == "stringToHash"{
-                return tableData[row].stringToHash
-        } else {
-                return tableData[row].hashedString
-        }
         return tableData[row].valueForKey(tableColumn.identifier)
     }
 }
