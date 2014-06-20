@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="14A238x" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6154.21" systemVersion="14A261i" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment defaultVersion="101000" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6154.17"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6154.21"/>
     </dependencies>
     <scenes>
         <!--Window Controller - Window-->
@@ -13,7 +13,7 @@
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
-                        <rect key="screenRect" x="0.0" y="0.0" width="1280" height="778"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
                         <view key="contentView" id="O92-4t-NeX">
                             <rect key="frame" x="14" y="22" width="480" height="270"/>
                             <autoresizingMask key="autoresizingMask"/>
@@ -45,7 +45,7 @@
                                     <action selector="add:" target="XfG-lQ-9wD" id="sDz-nV-Fut"/>
                                 </connections>
                             </button>
-                            <textField appearanceType="aqua" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yyW-ir-N3c">
+                            <textField appearanceType="aqua" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yyW-ir-N3c">
                                 <rect key="frame" x="20" y="12" width="376" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="285" id="76u-be-fhq"/>
@@ -63,7 +63,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="rIf-rD-ZV1" id="Bmi-Ce-2Dp">
-                                            <rect key="frame" x="0.0" y="0.0" width="408" height="19"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="499" height="19"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -103,6 +103,10 @@
                                     </subviews>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="501" id="P9z-vu-hrO"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="183" id="p7x-A0-cQQ"/>
+                                </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="KiD-sJ-GCY">
                                     <rect key="frame" x="1" y="119" width="223" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
@@ -120,10 +124,12 @@
                         <constraints>
                             <constraint firstItem="vCi-TY-uKm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yyW-ir-N3c" secondAttribute="trailing" constant="13" id="5Mo-dw-QUn"/>
                             <constraint firstItem="yyW-ir-N3c" firstAttribute="top" secondItem="yVi-aU-33g" secondAttribute="bottom" constant="8" symbolic="YES" id="EEW-hs-hTR"/>
+                            <constraint firstItem="yyW-ir-N3c" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="FFk-uN-c4w"/>
                             <constraint firstItem="vCi-TY-uKm" firstAttribute="top" secondItem="yVi-aU-33g" secondAttribute="bottom" constant="8" symbolic="YES" id="NYA-8O-b2f"/>
                             <constraint firstAttribute="trailing" secondItem="yVi-aU-33g" secondAttribute="trailing" constant="20" symbolic="YES" id="Urr-8D-GIW"/>
                             <constraint firstItem="yVi-aU-33g" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="Vck-57-P41"/>
                             <constraint firstItem="yVi-aU-33g" firstAttribute="leading" secondItem="yyW-ir-N3c" secondAttribute="leading" id="bDS-rh-vzl"/>
+                            <constraint firstItem="vCi-TY-uKm" firstAttribute="leading" secondItem="yyW-ir-N3c" secondAttribute="trailing" constant="13" id="bWI-wW-Z8x"/>
                             <constraint firstAttribute="trailing" secondItem="vCi-TY-uKm" secondAttribute="trailing" constant="25" id="fy4-bA-ggo"/>
                             <constraint firstAttribute="bottom" secondItem="yVi-aU-33g" secondAttribute="bottom" constant="42" id="iKb-kg-isC"/>
                             <constraint firstItem="yVi-aU-33g" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="qvt-ye-9Lf"/>
